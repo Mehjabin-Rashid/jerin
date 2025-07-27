@@ -15,12 +15,12 @@ const About = () => {
           {/* About Image */}
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="/public/image/hero.jpg" 
+              src="/image/hero.jpg" 
               alt="Profile" 
               className="w-full h-auto"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = 'public/image/hero.jpg';
+                e.target.src = '/image/hero.jpg';
               }}
             />
           </div>

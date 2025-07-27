@@ -22,7 +22,7 @@ const Project = () => {
             title: "Weather App",
             description:
               "Track real-time weather in any city using live API data. Built with React and Tailwind CSS.",
-            image:"public/image/Weather.jpg",
+            image:"/image/Weather.jpg",
           },
           {
             number: "02",
@@ -30,7 +30,7 @@ const Project = () => {
             title: "Task Manager",
             description:
               "Organize your daily tasks efficiently with this user-friendly productivity app.",
-            image:"public/image/Task.jpg",
+            image:"/image/Task.jpg",
           },
           {
             number: "03",
@@ -38,7 +38,7 @@ const Project = () => {
             title: "Budget Tracker",
             description:
               "Keep track of your income and expenses. Visualize where your money goes.",
-            image:"public/image/Budget.jpg",
+            image:"/image/Budget.jpg",
           },
         ].map((card, index) => (
           <div

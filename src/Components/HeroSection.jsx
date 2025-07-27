@@ -19,7 +19,7 @@ export default function HeroSection() {
         {/* Hero Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="/public/image/mypic.jpg" 
+            src="/image/mypic.jpg" 
             alt="Hero Illustration"
             className="w-full h-auto rounded-full py-10 px-10 shadow-lg"
           />
