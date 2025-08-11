@@ -12,7 +12,7 @@ export default function HeroSection() {
             Hello, my name Mehjabin Rashid
           </h1>
           <p className="text-lg sm:text-xl mb-8 text-gray-300">
-            Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer
+            Web Designer || Web Developer || Front-End Developer || Back-End Developer || MERN Developer
           </p>
         </div>
 
