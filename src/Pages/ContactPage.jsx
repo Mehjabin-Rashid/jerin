@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 const ContactPage = () => {
     return (
         <div>
-            <Menubar />
+            {/* Menubar is now rendered in App.jsx, not here! */}
             <Contact />
             <Footer />
         </div>

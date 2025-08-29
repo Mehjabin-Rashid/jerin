@@ -10,7 +10,7 @@ import Footer from '../Components/Footer';
 const HomePage = () => {
     return (
         <div>
-            <Menubar />
+            {/* Menubar is now rendered in App.jsx, not here! */}
             <HeroSection />
             <About />
             <Project />

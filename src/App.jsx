@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 
-import {HashRouter as Router, Route, Routes} from 'react-router-dom';
+
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import Menubar from './Components/Menubar'; // Import Menubar here
 import HomePage from './Pages/HomePage.jsx';
 import AboutPage from './Pages/AboutPage.jsx';
 import ProjectsPage from './Pages/ProjectsPage.jsx';
@@ -47,6 +49,8 @@ const App = () => {
 
   return (
     <Router>
+      {/* Menubar is rendered ONCE here, inside Router, so routing works for all pages */}
+      <Menubar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/About" element={<AboutPage />} />
