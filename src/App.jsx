@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react';
-
-
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Menubar from './Components/Menubar'; // Import Menubar here
+import Menubar from './Components/Menubar';
 import HomePage from './Pages/HomePage.jsx';
 import AboutPage from './Pages/AboutPage.jsx';
 import ProjectsPage from './Pages/ProjectsPage.jsx';
@@ -10,48 +7,14 @@ import SkillsPage from './Pages/SkillsPage.jsx';
 import ContactPage from './Pages/ContactPage.jsx';
 
 const App = () => {
-  // Add smooth scrolling for anchor links
-  useEffect(() => {
-    // Function to handle smooth scrolling
-    const handleAnchorClick = (e) => {
-      const href = e.target.getAttribute('href');
-      
-      // Check if it's an anchor link
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        
-        // Find the target element
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          // Scroll smoothly to the element
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    // Add click event listeners to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', handleAnchorClick);
-    });
-
-    // Cleanup event listeners
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', handleAnchorClick);
-      });
-    };
-  }, []);
+  // ...smooth scrolling code...
 
   return (
     <Router>
       {/* Menubar is rendered ONCE here, inside Router, so routing works for all pages */}
       <Menubar />
       <Routes>
+        {/* Route paths must match NavLink 'to' values exactly (case-sensitive) */}
         <Route path="/" element={<HomePage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Projects" element={<ProjectsPage />} />
