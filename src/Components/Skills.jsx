@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Skills = () => {
-  // Define your skills data
-  const skillCategories = [
+  const [skillCategories, setSkillCategories] = useState([
     {
       title: 'Frontend Development',
       skills: [
@@ -11,7 +10,7 @@ const Skills = () => {
         { name: 'JavaScript', level: 85 },
         { name: 'React', level: 80 },
         { name: 'Tailwind CSS', level: 85 },
-      ]
+      ],
     },
     {
       title: 'Backend Development',
@@ -19,7 +18,7 @@ const Skills = () => {
         { name: 'Node.js', level: 70 },
         { name: 'Express', level: 65 },
         { name: 'MongoDB', level: 60 },
-      ]
+      ],
     },
     {
       title: 'Tools & Others',
@@ -27,9 +26,18 @@ const Skills = () => {
         { name: 'Git', level: 80 },
         { name: 'VS Code', level: 85 },
         { name: 'WebStorm', level: 60 },
-      ]
-    }
-  ];
+      ],
+    },
+  ]);
+
+  // Function to handle updating skill levels
+  const handleChange = (categoryIndex, skillIndex, newLevel) => {
+    setSkillCategories((prevCategories) => {
+      const updatedCategories = [...prevCategories];
+      updatedCategories[categoryIndex].skills[skillIndex].level = newLevel;
+      return updatedCategories;
+    });
+  };
 
   return (
     <section id="skills" className="py-16 bg-zinc-700 text-white">
@@ -43,24 +51,37 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={categoryIndex} 
+            <div
+              key={categoryIndex}
               className="bg-zinc-800 p-6 rounded-lg shadow-lg"
             >
               <h3 className="text-xl font-semibold mb-6 text-indigo-400">
                 {category.title}
               </h3>
-              
+
               <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-2">
                       <span>{skill.name}</span>
-                      <span>{skill.level}%</span>
+                      <input
+                        type="number"
+                        value={skill.level}
+                        min="0"
+                        max="100"
+                        className="w-16 text-black px-1 rounded"
+                        onChange={(e) =>
+                          handleChange(
+                            categoryIndex,
+                            skillIndex,
+                            Number(e.target.value)
+                          )
+                        }
+                      />
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2.5">
-                      <div 
-                        className="bg-indigo-500 h-2.5 rounded-full" 
+                      <div
+                        className="bg-indigo-500 h-2.5 rounded-full transition-all duration-300"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
